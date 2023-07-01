@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/contact.css">
+  <!--
+  <script>
+    window.addEventListener('scroll', function() {
+      var stickynav = document.querySelector('.stickynav');
+      var navLinks = document.querySelectorAll('.navlink');
+      var scrollPosition = window.scrollY;
+      
+      if (scrollPosition > 0) {
+        stickynav.classList.add('sticky');
+        navLinks.forEach(function(navLink) {
+          navLink.style.color = '#D5D2D6';
+        });
+      } else {
+        stickynav.classList.remove('sticky');
+        navLinks.forEach(function(navLink) {
+          navLink.style.color = '#43595F';
+        });
+      }
+    });
+
+    window.addEventListener('scroll', function() {
+    var stickynav = document.querySelector('.stickynav');
+    var navLinks = document.querySelectorAll('.navlink');
+    var scrollPosition = window.scrollY;
+    
+    if (scrollPosition > 0) {
+      stickynav.classList.add('sticky');
+      navLinks.forEach(function(navLink) {
+        navLink.classList.add('scrolled'); // Add a class to indicate scrolling
+      });
+    } else {
+      stickynav.classList.remove('sticky');
+      navLinks.forEach(function(navLink) {
+        navLink.classList.remove('scrolled'); // Remove the class when scrolling is at the top
+      });
+    }
+  });
+  </script>
+-->
+  <script src="index.js"></script>
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="styles/styles.css">
+  <!-- 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&display=swap');
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+
+    html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+        /* overflow-x: scroll; */
+    }
+
+    body {
+        overflow-x: hidden;
+        /* overflow-x: scroll; */
+    }
+    /* * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .html {
+      font-size: 62.5%;
+    } */
+
+    .logo {
+      height: 6rem;
+      /* display: none; */
+    }
+
+    .header {
+      /* display: flex; */
+      position: relative;
+      /* background-color: burlywood; */
+      background: transparent;
+      padding: 1rem;
+    }
+    .stickynav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: transparent;
+      transition: background-color 0.3s;
+    }
+
+    .stickynav.sticky{
+      background-color: #43595F; /* Set the desired background color for the sticky navbar */
+      z-index: 1;
+    }
+    
+    .sticky.navlink::after{
+      background-color: #D5D2D6;
+    }
+
+    .heronav {
+      display: flex;
+      position: relative;
+      width: 100%;
+      /* border: 2px solid red; */
+      /* display: none; */
+    }
+
+    .navbardiv {
+      display: flex;
+      padding: 0 6.8rem;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: -25px;
+      top: 20.5px;
+    }
+
+    .navbar .navlist{
+      display: flex;
+      gap: 4rem;
+      list-style: none;
+    }
+
+    .navlink:link,
+    .navlink:visited {
+      font-size: 1.5rem;
+      color: #43595F;
+  
+    }
+
+    .navlink {
+      position: relative; /* Add relative positioning to the navlink */
+    }
+
+    .navlink::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 3px;
+      background-color: #43595F;
+      transform: scaleX(0); /* Initially hide the underline */
+      transform-origin: left; /* Set the origin of the transform */
+      transition: transform 0.3s; /* Add transition property for smooth animation */
+    }
+
+    .navlink:hover::after {
+      width: 100%; /* Expand width to 100% on hover */
+      transform: scaleX(1); /* Scale the underline to full width on hover */
+    }
+
+    .navlink.scrolled {
+      color: #D5D2D6; /* Change the color for the scrolled state */
+    }
+
+    .navlink.scrolled::after {
+      background-color: #D5D2D6; /* Change the underline color for the scrolled state */
+      border-color: #D5D2D6; /* Change the underline color for the scrolled state */
+    }
+    
+    .main {
+      /* border: 2px solid red; */
+    }
+
+    .herobg{
+      width: 100%;
+      position: relative;
+      z-index: -1;
+    }
+
+    .hero-text {
+      display:fixed;
+    }
+
+    .text h1{
+      display: none;
+      border: 2px solid green;
+      width: 50%;
+    }
+    
+    .text h1{
+      font-size: 1.5rem;
+      font-weight: 400;
+      text-align: center;
+      color:#43595F;
+      position: absolute;
+      right: 2rem;
+      bottom:23rem;
+    }
+
+    .section-services, 
+    .section-clients,
+    .section-contact{
+        padding: 9.6rem 0;
+        background-color: #A0CBDB;
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 2px solid red; */
+    }
+
+    .section-contact,
+    .section-clients {
+        background-color: #D5D2D6;
+    }
+
+    .section-hero p,
+    .section-services p, 
+    .section-clients p,
+    .section-contact p{
+        font-size: 3.2rem;
+    }
+
+    /* contact styling  tweaks*/
+    .container-contact {
+        position: relative;
+        width: 100%;
+        min-height: 50vh;
+        /* padding: 3.2rem; */
+        background-color: #d5d2d6;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-contact {
+        width: 100%;
+        /* max-width: 820px; */
+        background-color: #fff;
+        /* border-radius: 10px; */
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+        z-index: 0;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* contact styling tweaks ends here  */
+
+    /* FOOTER BEGINS HERE */
+
+    .footer{
+        background-color: #43595f;
+        padding: 9rem 0;
+        align-items: center;
+    }
+
+    .f-container {
+        max-width: 140rem;
+        margin: 0 auto;
+        display: grid;
+        gap:9rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .f-container h3{
+        font-size: 1.8rem;
+        font-weight: 400;
+        color:#D5D2D6;
+        margin-bottom: 4rem;
+    }
+
+    .f-about p {
+        color:#D5D2D6;
+        font-size: 1.1rem;
+    }
+
+    .f-about{
+        padding-left: 1rem;
+    }
+
+    .f-links ul,
+    .f-address address {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        list-style: none;
+        justify-content: center;
+    }
+
+    .f-links li, 
+    .f-links a {
+        font-size: 1.2rem;
+        color:#D5D2D6;
+    }
+
+    .f-address {
+        padding-right: 1rem;
+    }
+
+    .f-links span,
+    .f-address span {
+        margin-right: 1rem;
+    }
+
+    .f-address p,
+    .f-address a {
+        font-style: Normal;
+        color: #D5D2D6;
+    }
+
+    .f-credits p {
+        color:#D5D2D6;
+        text-align: center;
+        margin-top: 10rem;;
+    }
+
+    .footer a:hover,
+    .footer a:active {
+        color:#FFFFFF;
+        transition: 0.5s linear;
+    }
+    /* FOOTER ENDS HERE */
+
+
+
+
+
+
+
+    /* responsive code  */
+
+    /* 980 px  */
+    @media (max-width: 62em) {
+
+        .f-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .f-about,
+        .f-address,
+        .f-links,
+        .f-services,
+        .f-credits {
+            text-align: center;
+        }
+
+    }
+
+    @media (max-width: 850px) {
+        .form-contact{
+            grid-template-columns: 1fr;
+          }
+    }
+
+    @media (max-width: 480px) {
+        .container-contact {
+          padding: 2.4rem;
+        }
+
+        .form-contact,
+        .contact-info {
+        padding: 2.72rem 2.56rem;
+      }
+    }
+
+  </style>
+  -->
+</head>
+<body>
+
+  <!-- navbar  -->
+  <div class="stickynav">
+    <header class="header">
+      <div class="heronav">
+        <img src="img/logo3.svg.png.PNG" alt="logo" class="logo">
+        <div class="navbardiv">
+          <nav class="navbar">
+            <ul class="navlist">
+              <li class="navitem">
+                <a href="head.html" class="navlink">HOME</a>
+              </li>
+              <li class="navitem">
+                <a href="#" class="navlink">ABOUT</a>
+              </li>
+              <li class="navitem">
+                <a href="#" class="navlink">CLIENTS</a>
+              </li>
+              <li class="navitem">
+                <a href="contact.html" class="navlink">CONTACT</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+  <!-- navbar end  -->
+
+  <main class="main">
+    <div class="hero">
+        <!-- <img src="img/toolbg.jpeg" alt="herobackground" class="herobg"> -->
+        <div class="hero-text">
+            <h1>One stop solution for all your hardware needs</h1> 
+          <!-- <p>Enjoy your stay!</p> -->
+        </div>
+    </div>
+
+    <section class="section-services">
+      <div class="services">
+          <p>Services</p>
+      </div>
+  </section>
+  <section class="section-clients">
+      <div class="clients">
+          <div class="client-heading">
+            <h3>
+              Clients
+            </h3>
+          </div>
+          <div class="logos">
+            <a href="https://www.al-hamad.com/#company_overview" target="_blank">
+              <img src="img/hamadlogobg.png" alt="" class="logo1">
+            </a>
+            <a href="https://www.citycentrealzahia.com/" target="_blank">
+              <img src="img/cczahia.png" alt="" class="logo2">
+            </a>
+            <a href="https://www.etihadrail.ae/" target="_blank">
+              <img src="img/rail.png" alt="Etihad railways" class="logo3">
+            </a>
+          </div>
+  </section>
+  
+  <!-- contact section starts here  -->
+  <section id="contact">
+      
+      <div class="container-contact">
+          <!-- <span class="big-circle"></span>
+              <img src="img/shape.png" class="square" alt="" /> -->
+              <div class="form-contact">
+                  <div class="contact-info">
+                      <h3 class="title">Let's get in touch</h3>
+                      <p class="text">
+                          Interested to work with us? Lets connect and explore further.
+                      </p>
+      
+                      <div class="info">
+                          <div class="information">
+                          <img src="img/location.png" class="icon" alt="" />
+                          <p>Sharjah, UAE</p>
+                          </div>
+                          <div class="information">
+                          <img src="img/email.png" class="icon" alt="" />
+                          <p>alsafeenaalhamraatr@gmail.com</p>
+                          </div>
+                          <div class="information">
+                          <img src="img/phone.png" class="icon" alt="" />
+                          <p>+971-54-643-5317</p> 
+                          </div>
+                      </div>
+      
+                      <div class="social-media">
+                          <p>Connect with us :</p>
+                          <div class="social-icons">
+                          <a href="https://www.facebook.com" target="_blank">
+                              <i class="fab fa-facebook-f"></i>
+                          </a>
+                          <a href="https://wa.me/971544635317" target="_blank">
+                              <i class="fab fa-whatsapp"></i>
+                          </a>
+                          <a href="https://www.instagram.com" target="_blank">
+                              <i class="fab fa-instagram"></i>
+                          </a>
+                          <a href="https://www/linkedin.com" target="_blank">
+                              <i class="fab fa-linkedin-in"></i>
+                          </a>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="contact-form">
+                      
+                      <form action="index.html" autocomplete="off">
+                          <h3 class="title">Contact us</h3>
+                          <div class="input-container">
+                              <input type="text" name="name" class="input" />
+                              <label for="">Username</label>
+                              <span>Username</span>
+                          </div>
+                          <div class="input-container">
+                              <input type="email" name="email" class="input" />
+                              <label for="">Email</label>
+                              <span>Email</span>
+                          </div>
+                          <div class="input-container">
+                              <input type="tel" name="phone" class="input" />
+                              <label for="">Phone</label>
+                              <span>Phone</span>
+                          </div>
+                          <div class="input-container textarea">
+                              <textarea name="message" class="input"></textarea>
+                              <label for="">Message</label>
+                              <span>Message</span>
+                          </div>
+                          <input type="submit" value="Send" class="btn" />
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230818.69294640067!2d55.380286231302456!3d25.31958488391382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f5fede7964b%3A0x2a830aa19c1f6d89!2sSharjah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1688206066284!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+      </section>
+      <script src="js/app.js"></script>
+      <!-- contact section ends here -->
+  </main>
+      
+      <!-- footer section starts here  -->
+      <footer class="footer">
+          <div class="f-container">
+              <div class="f-about">
+                  <h3>About</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque sequi illum voluptas repellat quas totam cum aperiam similique asperiores aliquid?</p>
+              </div>
+              <div class="f-links">
+                  <h3>Links</h3>
+                  <ul>
+                      <li> 
+                          <span><ion-icon name="caret-forward-outline"></ion-icon></span><a href="#">Home</a> 
+                      </li>
+                      <li> 
+                          <span><ion-icon name="caret-forward-outline"></ion-icon></span><a href="#">About</a> 
+                      </li>
+                      <li> 
+                          <span><ion-icon name="caret-forward-outline"></ion-icon></span><a href="#">Clients</a> 
+                      </li>
+                      <li> 
+                          <span><ion-icon name="caret-forward-outline"></ion-icon></span><a href="#">Contact</a> 
+                      </li>
+                  </ul>
+              </div>
+              
+              <div class="f-address">
+                  <h3>Have a Question? </h3>
+                  <address>
+                      <div>
+                          <p>
+                              <span>
+                                  <ion-icon name="navigate-outline"></ion-icon>
+                              </span>
+                              <a href="maps.google.com">Sharjah, UAE</a>
+                          </p>
+                      </div>
+                      <div>
+                          <p>
+                              <span>
+                                  <ion-icon name="mail-outline"></ion-icon>
+                              </span>
+                              <a href="mailto:alsafeenaalhamraat@gmail.com">
+                                  alsafeenaalhamraatr@gmail.com
+                              </a>
+                          </p>
+                      </div>
+                      <div>
+                          <p>
+                              <span>
+                                  <ion-icon name="call-outline"></ion-icon>
+                              </span>
+                              <a href="tel:+971543547552">
+                                  +971-54-3547552
+                              </a> <br>
+                              <span>
+                                  <ion-icon name="call-outline"></ion-icon>
+                              </span>
+                              <a href="tel:+971544635317">
+                                  +971-54-4635317
+                              </a>
+                          </p>
+                      </div>
+                      <div>
+                          <p>
+                              <span>
+                                  <ion-icon name="logo-whatsapp"></ion-icon>
+                              </span>
+                              <a href="https://wa.me/971544635317" target="_blank">
+                                  Connect on WhatsApp
+                              </a>
+                          </p>
+                      </div>
+                  </p>
+              </div>
+          </address>
+      </div>
+  </div>
+  <div class="f-credits">
+      <p>
+          Copyright ©2023 All rights reserved. Al Safeena Al Hamra Trading.
+          <br>
+          Designed by Arnav Singh, arnavs1612@gmail.com
+      </p>
+  </div>
+</footer>
+<!-- footer section ends here  -->
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="/js/index.js"></script> 
+  </main>
+</body>
+</html>
