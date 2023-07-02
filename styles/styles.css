@@ -128,7 +128,7 @@ body {
 } */
 
 .hero {
-    background-image: url(/img/toolbg.jpeg);
+    background-image: url(./img/toolbg.jpeg);
     background-size: cover;
     background-position: center;
     position:relative;
